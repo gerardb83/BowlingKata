@@ -2,13 +2,14 @@ package co.grandcircus.bowlingKata;
 
 public class Game {
 
-	public void roll(int i) {
-		
+	private int score;
+
+	public void roll(int pins) {
+		score += pins;
 	}
 
-	public Integer score() {
-		
-		return 0;
+	public Integer score() {	
+		return score;
 	}
 
 }

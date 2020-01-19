@@ -6,13 +6,30 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class AppTest {
+	
+	private Game game;
+	
+	@BeforeEach
+	public void setup() {
+		game = new Game();
+	}
 
 	@Test
 	public void whenYouRollAllMissesScoreReturnsZero(){
-		Game game = new Game();
-		game.roll(0);
+		rollMany(20, 0);
 		assertEquals(0, game.score());
 	}
 	
+	@Test
+	public void whenYouRollAllOnesScoreReturns20(){
+		rollMany(20, 1);
+		assertEquals(20, game.score());
+	}
+	
+	public void rollMany(int n, int pins) {
+		for (int i = 0; i < n; i++) {
+			game.roll(pins);
+		}
+	}
 
 }
