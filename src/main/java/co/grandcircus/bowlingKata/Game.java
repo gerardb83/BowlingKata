@@ -15,11 +15,22 @@ public class Game {
 		int score = 0;
 		int i = 0;
 		for(int frame = 0; frame < 10; frame++) {
+			if (rolls[i] + rolls[i +1] == 10) {
+				score += 10 + spareBonus(i);
+				i += 2;
+			} else {
+			
 			score += rolls[i] + rolls[i + 1];
 			i += 2;
+			}
 		}
 		
 		return score;
+	}
+
+
+	private int spareBonus(int i) {
+		return rolls[i + 2];
 	}
 
 }

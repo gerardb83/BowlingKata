@@ -26,14 +26,14 @@ public class AppTest {
 		assertEquals(20, game.score());
 	}
 	
-//	@Test
-//	public void whenYouRollASpareThenThreeThenAllMissesScoreReturns16(){
-//		game.roll(5);
-//		game.roll(5);
-//		game.roll(3);
-//		rollMany(17, 0);
-//		assertEquals(16, game.score());
-//	}
+	@Test
+	public void whenYouRollASpareThenThreeThenAllMissesScoreReturns16(){
+		game.roll(5);
+		game.roll(5);
+		game.roll(3);
+		rollMany(17, 0);
+		assertEquals(16, game.score());
+	}
 	
 	public void rollMany(int n, int pins) {
 		for (int i = 0; i < n; i++) {
