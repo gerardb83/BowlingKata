@@ -35,6 +35,15 @@ public class AppTest {
 		assertEquals(16, game.score());
 	}
 	
+	@Test
+	public void whenYouRollAStrikeThenThreeThenFourThenAllMissesScoreReturns24(){
+		game.roll(10);
+		game.roll(3);
+		game.roll(4);
+		rollMany(17, 0);
+		assertEquals(24, game.score());
+	}
+	
 	public void rollMany(int n, int pins) {
 		for (int i = 0; i < n; i++) {
 			game.roll(pins);
